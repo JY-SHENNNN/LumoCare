@@ -1,0 +1,1 @@
+ C:\\MobileSys\\MealSelection\\.dart_tool\\flutter_build\\8ce8ffb509d29c1d9d1d917d772eee20\\native_assets.json: 

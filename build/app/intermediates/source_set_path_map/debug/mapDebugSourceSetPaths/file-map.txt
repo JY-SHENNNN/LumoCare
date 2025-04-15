@@ -1,10 +1,10 @@
-com.example.mealselection.app-debug-0 C:\MobileSys\MealSelection\mealselection\android\app\src\debug\res
-com.example.mealselection.app-main-1 C:\MobileSys\MealSelection\mealselection\android\app\src\main\res
-com.example.mealselection.app-pngs-2 C:\MobileSys\MealSelection\mealselection\build\app\generated\res\pngs\debug
-com.example.mealselection.app-resValues-3 C:\MobileSys\MealSelection\mealselection\build\app\generated\res\resValues\debug
-com.example.mealselection.app-packageDebugResources-4 C:\MobileSys\MealSelection\mealselection\build\app\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.mealselection.app-packageDebugResources-5 C:\MobileSys\MealSelection\mealselection\build\app\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.mealselection.app-debug-6 C:\MobileSys\MealSelection\mealselection\build\app\intermediates\merged_res\debug\mergeDebugResources
+com.example.mealselection.app-debug-0 C:\MobileSys\MealSelection\android\app\src\debug\res
+com.example.mealselection.app-main-1 C:\MobileSys\MealSelection\android\app\src\main\res
+com.example.mealselection.app-pngs-2 C:\MobileSys\MealSelection\build\app\generated\res\pngs\debug
+com.example.mealselection.app-resValues-3 C:\MobileSys\MealSelection\build\app\generated\res\resValues\debug
+com.example.mealselection.app-packageDebugResources-4 C:\MobileSys\MealSelection\build\app\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.mealselection.app-packageDebugResources-5 C:\MobileSys\MealSelection\build\app\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.mealselection.app-debug-6 C:\MobileSys\MealSelection\build\app\intermediates\merged_res\debug\mergeDebugResources
 com.example.mealselection.app-jetified-activity-1.8.1-7 C:\Users\JiaYing\.gradle\caches\8.10.2\transforms\13dd610fda78ecd8ad3daad9b8195d7e\transformed\jetified-activity-1.8.1\res
 com.example.mealselection.app-lifecycle-viewmodel-2.7.0-8 C:\Users\JiaYing\.gradle\caches\8.10.2\transforms\1b91be3af319ede480d7185430690ee1\transformed\lifecycle-viewmodel-2.7.0\res
 com.example.mealselection.app-jetified-tracing-1.2.0-9 C:\Users\JiaYing\.gradle\caches\8.10.2\transforms\285b6d6abe2dd4ba9515886e610a7341\transformed\jetified-tracing-1.2.0\res

@@ -4,7 +4,7 @@
             "outputFile": "com.example.mealselection.app-mergeDebugResources-4:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\MobileSys\\MealSelection\\mealselection\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\MobileSys\\MealSelection\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
