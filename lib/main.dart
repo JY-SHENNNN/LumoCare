@@ -28,13 +28,51 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 121, 119, 113),
         elevation: 0,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () {},
-          ),
-        ],
+        // actions: [
+        //   IconButton(
+        //     icon: const Icon(Icons.menu),
+        //     onPressed: () {},
+        //   ),
+        // ],
       ),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            DrawerHeader(
+              child: Icon(
+                Icons.account_balance,
+              ),
+            ),
+            //HOME PAGE LIST TITLE
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text("H O M E"),
+              onTap: () {
+                // go to home page
+              },
+            ),
+
+            //SETTING PAGE LIST TITLE
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text("S E T T I N G"),
+              onTap:() {
+                // go to setting page
+              },
+            ),
+
+            //LOG OUT PAGE LIST TITLE
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text("L O G O U T"),
+              onTap:() {
+                // go to welcome page
+              },
+            )
+          ], 
+        ),
+      ),
+      
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(20),
@@ -106,9 +144,9 @@ class HomePage extends StatelessWidget {
               const SizedBox(height: 30),
 
               const Text(
-                "Access to your light sensor required\nfor proper operation",
+                "Access to your light sensor is required for \n proper operation",
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 18, color: Colors.white),
+                style: TextStyle(fontSize: 16, color: Colors.white),
               ),
               const SizedBox(height: 20),
 
@@ -121,7 +159,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Firstpage(),),);
                 },
                 child: const Text(
                   "ALLOW ACCESS",
