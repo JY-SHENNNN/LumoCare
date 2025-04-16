@@ -22,65 +22,132 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 240, 229, 198),
+      backgroundColor: const Color.fromARGB(255, 219, 215, 205),
       appBar: AppBar(
-        title: const Text("Visio Health Hero"),
+        title: const Text("LumoCare"),
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 239, 218, 162),
+        backgroundColor: const Color.fromARGB(255, 121, 119, 113),
         elevation: 0,
-        leading: const Icon(Icons.menu),
         actions: [
           IconButton(
-            icon: const Icon(Icons.search),
+            icon: const Icon(Icons.menu),
             onPressed: () {},
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: Container(
-              alignment: Alignment.topCenter,
-              padding: const EdgeInsets.only(top: 20),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Text(
-                    "Keep attention on your eyes from your environment",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 45,
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      fontStyle: FontStyle.italic,
-                      letterSpacing: 1.2,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Text(
+                "Smart light monitoring,\nbe your vision hero",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  fontStyle: FontStyle.italic,
+                  letterSpacing: 1.2,
+                ),
+              ),
+              const SizedBox(height: 40),
+
+              // 🌞 Real-time monitoring
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Icon(Icons.wb_sunny, size: 30, color: Colors.white),
+                  SizedBox(width: 10),
+                  Flexible(
+                    child: Text(
+                      "Real-time monitoring\nof environmental light",
+                      style: TextStyle(fontSize: 16, color: Colors.white),
                     ),
-                  ),
-                  const SizedBox(height: 20),
-                  const Icon(
-                    Icons.remove_red_eye,
-                    size: 100,
-                  ),
-                  ElevatedButton(
-                    child: const Text("Test your environment"),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Firstpage(),
-                        ),
-                      );
-                    },
                   ),
                 ],
               ),
-            ),
+              const SizedBox(height: 20),
+
+              // 👁️ Low light reminders
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Icon(Icons.remove_red_eye, size: 30, color: Colors.white),
+                  SizedBox(width: 10),
+                  Flexible(
+                    child: Text(
+                      "Low light reminders\nStrong light suggestions",
+                      style: TextStyle(fontSize: 16, color: Colors.white),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+
+              // ☁️ Data recording
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Icon(Icons.cloud, size: 30, color: Colors.white),
+                  SizedBox(width: 10),
+                  Flexible(
+                    child: Text(
+                      "Record your eye-use\nenvironmental data",
+                      style: TextStyle(fontSize: 16, color: Colors.white),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 30),
+
+              const Text(
+                "Access to your light sensor required\nfor proper operation",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 18, color: Colors.white),
+              ),
+              const SizedBox(height: 20),
+
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 14),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                onPressed: () {
+                  
+                },
+                child: const Text(
+                  "ALLOW ACCESS",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  "MAYBE LATER",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14,
+                    letterSpacing: 1.1,
+                  ),
+                ),
+              ),
+            ],
           ),
-          const Expanded(
-            child: SizedBox(),
-          ),
-        ],
+        ),
       ),
     );
   }
+
 }

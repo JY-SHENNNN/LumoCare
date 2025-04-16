@@ -1,0 +1,1 @@
+ C:\\MobileSys\\LumoCare\\.dart_tool\\flutter_build\\bd10025edea309ead69f3b0e9a1e1c15\\native_assets.json: 
