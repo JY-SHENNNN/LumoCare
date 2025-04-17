@@ -4,7 +4,7 @@
     "type": "PACKAGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.example.mealselection",
+  "applicationId": "com.example.gtk_flutter",
   "variantName": "debug",
   "elements": [
     {

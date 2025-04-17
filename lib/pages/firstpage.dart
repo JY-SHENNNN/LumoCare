@@ -3,6 +3,7 @@ import 'package:light/light.dart';
 import 'home_tab.dart';
 import 'history_tab.dart';
 import 'settings_tab.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Firstpage extends StatefulWidget {
   const Firstpage({super.key});
@@ -106,10 +107,12 @@ class _FirstpageState extends State<Firstpage> {
             ListTile(
               leading: const Icon(Icons.logout),
               title: const Text("L O G O U T"),
-              onTap: () {
-                Navigator.pushNamed(context, '/');
+              onTap: () async {
+                await FirebaseAuth.instance.signOut();
+                Navigator.pushReplacementNamed(context, '/');
               },
             ),
+
           ],
         ),
       ),

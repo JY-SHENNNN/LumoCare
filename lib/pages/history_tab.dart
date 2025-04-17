@@ -58,7 +58,7 @@ class HistoryTabView extends StatelessWidget {
                 drawHorizontalLine: true,
                 horizontalInterval: 200,
                 getDrawingHorizontalLine: (value) => FlLine(
-                  color: Colors.grey[300],
+                  color: Colors.grey[300]!,
                   strokeWidth: 1,
                   dashArray: [5, 5],
                 ),
