@@ -5,6 +5,6 @@ class HistoryTabView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("📈 Light history chart here")  );
+    return Center(child: Text("📈 Light history chart here") );
   }
 }

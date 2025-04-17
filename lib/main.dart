@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:testapp/pages/firstpage.dart';
+import 'package:testapp/pages/history_tab.dart';
+import 'package:testapp/pages/settings_tab.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(), 
+      initialRoute: '/',
+      routes: {
+        'welcome': (context) => const HomePage(),     
+        '/dashboard': (context) => const Firstpage(), 
+        'setting': (context) => const SettingsTabView(),
+        // 'history': (context) => const HistoryTabView(),
+      },
     );
   }
 }
@@ -49,6 +57,7 @@ class HomePage extends StatelessWidget {
               title: Text("H O M E"),
               onTap: () {
                 // go to home page
+                Navigator.pushNamed(context, 'welcome');
               },
             ),
 
@@ -58,6 +67,7 @@ class HomePage extends StatelessWidget {
               title: Text("S E T T I N G"),
               onTap:() {
                 // go to setting page
+                Navigator.pushNamed(context, 'setting');
               },
             ),
 
@@ -67,6 +77,7 @@ class HomePage extends StatelessWidget {
               title: Text("L O G O U T"),
               onTap:() {
                 // go to welcome page
+                Navigator.pushNamed(context, 'welcome');
               },
             )
           ], 

@@ -89,7 +89,7 @@ class _FirstpageState extends State<Firstpage> {
                 setState(() {
                   _currentIndex = 1;
                 });
-                Navigator.pop(context);
+                Navigator.pushReplacementNamed(context, 'history');
               },
             ),
             ListTile(
@@ -99,7 +99,7 @@ class _FirstpageState extends State<Firstpage> {
                 setState(() {
                   _currentIndex = 2;
                 });
-                Navigator.pop(context);
+                Navigator.pushReplacementNamed(context, 'setting');
               },
             ),
             const Divider(),
@@ -107,7 +107,7 @@ class _FirstpageState extends State<Firstpage> {
               leading: const Icon(Icons.logout),
               title: const Text("L O G O U T"),
               onTap: () {
-                
+                Navigator.pushReplacementNamed(context, 'welcome');
               },
             ),
           ],
