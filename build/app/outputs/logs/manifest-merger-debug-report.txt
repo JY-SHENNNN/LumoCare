@@ -26,6 +26,7 @@ MERGED from C:\MobileSys\LumoCare\android\app\src\main\AndroidManifest.xml:1:1-4
 INJECTED from C:\MobileSys\LumoCare\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 INJECTED from C:\MobileSys\LumoCare\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 INJECTED from C:\MobileSys\LumoCare\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+MERGED from [:light] C:\MobileSys\LumoCare\build\light\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.fragment:fragment:1.7.1] C:\Users\JiaYing\.gradle\caches\8.10.2\transforms\55520e4df2220e27f13f0bbb7467d11a\transformed\fragment-1.7.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.window:window:1.2.0] C:\Users\JiaYing\.gradle\caches\8.10.2\transforms\5093ab42d2307deb2d7ac0b7f5718c38\transformed\jetified-window-1.2.0\AndroidManifest.xml:17:1-31:12
 MERGED from [androidx.window:window-java:1.2.0] C:\Users\JiaYing\.gradle\caches\8.10.2\transforms\c1f85211ae6978d0218d51595a7f7e62\transformed\jetified-window-java-1.2.0\AndroidManifest.xml:17:1-21:12
@@ -80,6 +81,8 @@ uses-sdk
 INJECTED from C:\MobileSys\LumoCare\android\app\src\debug\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\MobileSys\LumoCare\android\app\src\debug\AndroidManifest.xml
 INJECTED from C:\MobileSys\LumoCare\android\app\src\debug\AndroidManifest.xml
+MERGED from [:light] C:\MobileSys\LumoCare\build\light\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
+MERGED from [:light] C:\MobileSys\LumoCare\build\light\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
 MERGED from [androidx.fragment:fragment:1.7.1] C:\Users\JiaYing\.gradle\caches\8.10.2\transforms\55520e4df2220e27f13f0bbb7467d11a\transformed\fragment-1.7.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.fragment:fragment:1.7.1] C:\Users\JiaYing\.gradle\caches\8.10.2\transforms\55520e4df2220e27f13f0bbb7467d11a\transformed\fragment-1.7.1\AndroidManifest.xml:5:5-44
 MERGED from [androidx.window:window:1.2.0] C:\Users\JiaYing\.gradle\caches\8.10.2\transforms\5093ab42d2307deb2d7ac0b7f5718c38\transformed\jetified-window-1.2.0\AndroidManifest.xml:20:5-44

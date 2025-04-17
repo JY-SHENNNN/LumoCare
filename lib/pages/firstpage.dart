@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:light/light.dart';
+import 'home_tab.dart';
+import 'history_tab.dart';
+import 'settings_tab.dart';
 
 class Firstpage extends StatefulWidget {
   const Firstpage({super.key});
@@ -10,11 +14,47 @@ class Firstpage extends StatefulWidget {
 class _FirstpageState extends State<Firstpage> {
   int _currentIndex = 0;
 
-  final List<Widget> _pages = [
-    const HomeTabView(),
-    const HistoryTabView(),
-    const SettingsTabView(),
-  ];
+  List<Widget> get _pages => [
+  HomeTabView(lux: _lux, advice: getAdvice(_lux)),
+  const HistoryTabView(),
+  const SettingsTabView(),
+];
+
+
+  Light? _light;
+  late Stream<int> _lightStream;
+  int _lux = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    initLightSensor();
+  }
+
+  void initLightSensor() {
+    _light = Light();
+    try {
+      _lightStream = _light!.lightSensorStream;
+      _lightStream.listen((luxValue) {
+        setState(() {
+          _lux = luxValue;
+        });
+      });
+    } catch (e) {
+      print("Light sensor error: $e");
+    }
+  }
+
+  String getAdvice(int lux) {
+    if (lux < 100) {
+      return "🌙 The light is too weak, turn on the light";
+    } else if (lux > 1000) {
+      return "☀️ Strong light, take care of your eyes";
+    } else {
+      return "✅ Moderate light, suitable for eyes, pay attention to rest";
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -98,82 +138,9 @@ class _FirstpageState extends State<Firstpage> {
   }
 }
 
-class HomeTabView extends StatelessWidget {
-  const HomeTabView({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.all(16),
-      children: [
-        Card(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-          child: const ListTile(
-            leading: Icon(Icons.wb_sunny, color: Colors.orange, size: 32),
-            title: Text("Current light: 360 lux"),
-            subtitle: Text("✅ Suitable for eye use"),
-          ),
-        ),
-        const SizedBox(height: 16),
-        Card(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-          child: const ListTile(
-            leading: Icon(Icons.remove_red_eye, color: Colors.blue, size: 32),
-            title: Text("Advice"),
-            subtitle: Text("Bright enough.\nRemember to take breaks."),
-          ),
-        ),
-        const SizedBox(height: 16),
-        Card(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-          child: const ListTile(
-            leading: Icon(Icons.bar_chart, color: Colors.green, size: 32),
-            title: Text("View history"),
-            subtitle: Text("Check light trends and eye care tips."),
-          ),
-        ),
-      ],
-    );
-  }
-}
 
-class HistoryTabView extends StatelessWidget {
-  const HistoryTabView({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Center(child: Text("📈 Light history chart here"));
-  }
-}
+
   
-class SettingsTabView extends StatelessWidget {
-  const SettingsTabView({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.all(16),
-      children: [
-        SwitchListTile(
-          value: true,
-          onChanged: (val) {},
-          title: const Text("Enable light monitoring"),
-        ),
-        SwitchListTile(
-          value: false,
-          onChanged: (val) {},
-          title: const Text("Upload data to cloud"),
-        ),
-        const Divider(),
-        ListTile(
-          title: const Text("Change Password"),
-          onTap: () {},
-        ),
-        ListTile(
-          title: const Text("Logout"),
-          onTap: () {},
-        ),
-      ],
-    );
-  }
-}

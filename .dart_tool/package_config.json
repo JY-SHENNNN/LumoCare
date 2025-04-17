@@ -80,6 +80,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "light",
+      "rootUri": "file:///C:/Users/JiaYing/AppData/Local/Pub/Cache/hosted/pub.dev/light-4.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.6"
+    },
+    {
       "name": "lints",
       "rootUri": "file:///C:/Users/JiaYing/AppData/Local/Pub/Cache/hosted/pub.dev/lints-5.1.1",
       "packageUri": "lib/",
@@ -170,7 +176,7 @@
       "languageVersion": "3.7"
     }
   ],
-  "generated": "2025-04-15T20:31:03.580272Z",
+  "generated": "2025-04-17T14:27:12.203387Z",
   "generator": "pub",
   "generatorVersion": "3.7.2",
   "flutterRoot": "file:///C:/Users/JiaYing/flutter_windows_3.29.2-stable/flutter",
