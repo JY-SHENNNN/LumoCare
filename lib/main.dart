@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:testapp/pages/firstpage.dart';
 import 'package:testapp/pages/history_tab.dart';
 import 'package:testapp/pages/settings_tab.dart';
+import 'package:testapp/pages/signup_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +16,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: '/',
       routes: {
-        'welcome': (context) => const HomePage(),     
+        '/': (context) => const HomePage(),     
         '/dashboard': (context) => const Firstpage(), 
-        'setting': (context) => const SettingsTabView(),
+        '/setting': (context) => const SettingsTabView(),
+        '/signup': (context) => const SignUpPage(),
+
         // 'history': (context) => const HistoryTabView(),
       },
     );
@@ -57,7 +60,7 @@ class HomePage extends StatelessWidget {
               title: Text("H O M E"),
               onTap: () {
                 // go to home page
-                Navigator.pushNamed(context, 'welcome');
+                Navigator.pushNamed(context, '/');
               },
             ),
 
@@ -67,19 +70,9 @@ class HomePage extends StatelessWidget {
               title: Text("S E T T I N G"),
               onTap:() {
                 // go to setting page
-                Navigator.pushNamed(context, 'setting');
+                Navigator.pushNamed(context, '/setting');
               },
             ),
-
-            //LOG OUT PAGE LIST TITLE
-            ListTile(
-              leading: Icon(Icons.logout),
-              title: Text("L O G O U T"),
-              onTap:() {
-                // go to welcome page
-                Navigator.pushNamed(context, 'welcome');
-              },
-            )
           ], 
         ),
       ),
@@ -154,43 +147,100 @@ class HomePage extends StatelessWidget {
               ),
               const SizedBox(height: 30),
 
-              const Text(
-                "Access to your light sensor is required for \n proper operation",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 16, color: Colors.white),
-              ),
-              const SizedBox(height: 20),
+              // log in setting
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Text(
+                    "Welcome to LumoCare",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontStyle: FontStyle.italic,
+                      letterSpacing: 1.2,
+                    ),
+                  ),
+                  const SizedBox(height: 30),
 
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 14),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
+                  // username
+                  TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Username',
+                      fillColor: Colors.white,
+                      filled: true,
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                    ),
                   ),
-                ),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Firstpage(),),);
-                },
-                child: const Text(
-                  "ALLOW ACCESS",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
+                  const SizedBox(height: 20),
+
+                  // password
+                  TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      hintText: 'Password',
+                      fillColor: Colors.white,
+                      filled: true,
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                    ),
                   ),
-                ),
-              ),
-              const SizedBox(height: 10),
-              TextButton(
-                onPressed: () {},
-                child: const Text(
-                  "MAYBE LATER",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                    letterSpacing: 1.1,
+                  const SizedBox(height: 30),
+
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 14),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                          title: const Text("Permission Required"),
+                          content: const Text("We need access to your light sensor to continue."),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: const Text("Maybe Later"),
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                                Navigator.pushReplacementNamed(context, '/dashboard');
+                              },
+                              child: const Text("Allow Access"),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      "Login",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
-                ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/signup');
+                    },
+                    child: const Text(
+                      "Don't have an account? \n Sign up",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                      ),
+                    ),
+                  ),
+
+                ],
               ),
             ],
           ),

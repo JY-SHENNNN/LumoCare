@@ -31,7 +31,7 @@ class SettingsTabView extends StatelessWidget {
           ListTile(
             title: const Text("Logout"),
             onTap: () {
-              Navigator.pushReplacementNamed(context, 'welcome'); 
+              Navigator.pushReplacementNamed(context, '/'); 
             },
           ),
         ],

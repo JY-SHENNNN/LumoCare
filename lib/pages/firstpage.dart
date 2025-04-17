@@ -89,7 +89,7 @@ class _FirstpageState extends State<Firstpage> {
                 setState(() {
                   _currentIndex = 1;
                 });
-                Navigator.pushReplacementNamed(context, 'history');
+                Navigator.pushNamed(context, 'history');
               },
             ),
             ListTile(
@@ -99,7 +99,7 @@ class _FirstpageState extends State<Firstpage> {
                 setState(() {
                   _currentIndex = 2;
                 });
-                Navigator.pushReplacementNamed(context, 'setting');
+                Navigator.pushNamed(context, '/setting');
               },
             ),
             const Divider(),
@@ -107,7 +107,7 @@ class _FirstpageState extends State<Firstpage> {
               leading: const Icon(Icons.logout),
               title: const Text("L O G O U T"),
               onTap: () {
-                Navigator.pushReplacementNamed(context, 'welcome');
+                Navigator.pushNamed(context, '/');
               },
             ),
           ],
@@ -119,7 +119,7 @@ class _FirstpageState extends State<Firstpage> {
         currentIndex: _currentIndex,
         onTap: (index) {
           if (index == 2) { // if tab return icon
-            Navigator.pop(context); // back to the last page
+            Navigator.pushNamed(context, '/dashboard'); // back to the last page
           } else {
             setState(() {
               _currentIndex = index; // back to normal page
