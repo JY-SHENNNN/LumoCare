@@ -4,6 +4,8 @@ import 'home_tab.dart';
 import 'history_tab.dart';
 import 'settings_tab.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:intl/intl.dart'; 
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Firstpage extends StatefulWidget {
   const Firstpage({super.key});
@@ -39,6 +41,12 @@ class _FirstpageState extends State<Firstpage> {
       _lightStream.listen((luxValue) {
         setState(() {
           _lux = luxValue;
+        });
+
+        final currentHour = DateFormat('H').format(DateTime.now());
+        FirebaseFirestore.instance.collection('light_data').doc(currentHour).set({
+          'lux': luxValue,
+          'timestamp': FieldValue.serverTimestamp(),
         });
       });
     } catch (e) {

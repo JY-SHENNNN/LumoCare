@@ -21,14 +21,7 @@ class _SignUpPageState extends State<SignUpPage> {
         password: _passwordController.text.trim(),
       );
 
-      // // // 可选：发送邮箱验证邮件
-      // // await userCredential.user?.sendEmailVerification();
-
-      // ScaffoldMessenger.of(context).showSnackBar(
-      //   const SnackBar(content: Text('Sign up successful! Please check your email.')),
-      // );
-
-      Navigator.pop(context); // 返回登录页
+      Navigator.pop(context); // back to sign in page
     } catch (e) {
       setState(() {
         _errorMessage = e.toString();
