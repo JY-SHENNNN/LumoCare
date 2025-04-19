@@ -128,49 +128,71 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               const SizedBox(height: 40),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Icon(Icons.wb_sunny, size: 30, color: Colors.white),
-                  SizedBox(width: 10),
-                  Flexible(
-                    child: Text(
-                      "Real-time monitoring\nof environmental light",
-                      style: TextStyle(fontSize: 16, color: Colors.white),
+              Container(
+                width: 300,
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(157, 134, 138, 139), // background color
+                  borderRadius: BorderRadius.circular(8), // broard
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Icon(Icons.wb_sunny, size: 30, color: Colors.white),
+                    SizedBox(width: 10),
+                    Flexible(
+                      child: Text(
+                        "Real-time monitoring\nof environmental light",
+                        style: TextStyle(fontSize: 16, color: Colors.white),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
+              ),
+
+              const SizedBox(height: 20),
+              Container(
+                width: 300,
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(157, 134, 138, 139), // background color
+                  borderRadius: BorderRadius.circular(8), // broard
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Icon(Icons.remove_red_eye, size: 30, color: Colors.white),
+                    SizedBox(width: 10),
+                    Flexible(
+                      child: Text(
+                        "Low light reminders\nStrong light suggestions",
+                        style: TextStyle(fontSize: 16, color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(height: 20),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Icon(Icons.remove_red_eye, size: 30, color: Colors.white),
-                  SizedBox(width: 10),
-                  Flexible(
-                    child: Text(
-                      "Low light reminders\nStrong light suggestions",
-                      style: TextStyle(fontSize: 16, color: Colors.white),
+              Container(
+                width: 300,
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(157, 134, 138, 139), // background color
+                  borderRadius: BorderRadius.circular(8), // broard
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Icon(Icons.cloud, size: 30, color: Colors.white),
+                    SizedBox(width: 10),
+                    Flexible(
+                      child: Text(
+                        "Record your eye-use\nenvironmental data",
+                        style: TextStyle(fontSize: 16, color: Colors.white),
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Icon(Icons.cloud, size: 30, color: Colors.white),
-                  SizedBox(width: 10),
-                  Flexible(
-                    child: Text(
-                      "Record your eye-use\nenvironmental data",
-                      style: TextStyle(fontSize: 16, color: Colors.white),
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               const SizedBox(height: 30),
               const Text(
@@ -239,6 +261,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+              const SizedBox(height: 20),
 
               TextButton(
                 onPressed: () {
