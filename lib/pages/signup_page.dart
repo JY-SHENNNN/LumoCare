@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -11,6 +13,7 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
   String? _errorMessage;
 
   Future<void> _register() async {
@@ -21,6 +24,22 @@ class _SignUpPageState extends State<SignUpPage> {
         password: _passwordController.text.trim(),
       );
 
+    final user = userCredential.user;
+    
+    if (user != null) {
+      // setting the username
+      await user.updateDisplayName(_usernameController.text.trim());
+      await user.reload();
+
+      // store the user's message
+      await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
+        'username': _usernameController.text.trim(),
+        'email': user.email,
+        'createdAt': Timestamp.now(),
+      });
+    }
+      // wait for setting username
+      //await userCredential.user!.updateDisplayName(_usernameController.text.trim());
       Navigator.pop(context); // back to sign in page
     } catch (e) {
       setState(() {
@@ -47,6 +66,19 @@ class _SignUpPageState extends State<SignUpPage> {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 30),
+            // Username
+            TextField(
+              controller: _usernameController,
+              decoration: InputDecoration(
+                hintText: 'Username',
+                filled: true,
+                fillColor: Colors.white,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
 
             // Email
             TextField(
