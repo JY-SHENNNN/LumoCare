@@ -49,7 +49,7 @@ class HistoryTabView extends StatelessWidget {
                   minX: 0,
                   maxX: 23,
                   minY: 0,
-                  maxY: 1400,
+                  maxY: 1000,
                   titlesData: FlTitlesData(
                     leftTitles: AxisTitles(
                       sideTitles: SideTitles(

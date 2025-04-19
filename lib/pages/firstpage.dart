@@ -57,11 +57,16 @@ class _FirstpageState extends State<Firstpage> {
   String getAdvice(int lux) {
     if (lux < 100) {
       return "🌙 The light is too weak, turn on the light";
-    } else if (lux > 1000) {
-      return "☀️ Strong light, take care of your eyes";
+    } else if (lux >= 100 && lux < 300){
+      return "🕯️ The light is good for relax";
+    } else if (lux >= 300 && lux < 500){
+      return "💡 The light is good for study or work, pay attention to rest";
     } else {
-      return "✅ Moderate light, suitable for eyes, pay attention to rest";
-    }
+      return "🔦 The light is good for small delicate task, pay attention to rest";
+    } 
+    // else {
+    //   return "☀️ Strong light, take care of your eyes";
+    // } 
   }
 
 
