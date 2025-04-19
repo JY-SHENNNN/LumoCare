@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 
-class SettingsTabView extends StatelessWidget {
+class SettingsTabView extends StatefulWidget {
   const SettingsTabView({super.key});
+
+  @override
+  State<SettingsTabView> createState() => _SettingsTabViewState();
+}
+
+
+class _SettingsTabViewState extends State<SettingsTabView> {
+bool _isMonitoringEnabled = true;
+bool _isUploadEnabled = true;
 
   @override
   Widget build(BuildContext context) {
@@ -14,13 +23,22 @@ class SettingsTabView extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: [
           SwitchListTile(
-            value: true,
-            onChanged: (val) {},
+            value: _isMonitoringEnabled,
+            onChanged: (val) {
+              setState(() {
+                _isMonitoringEnabled = val;
+              }
+              );
+            },
             title: const Text("Enable light monitoring"),
           ),
           SwitchListTile(
-            value: false,
-            onChanged: (val) {},
+            value: _isUploadEnabled,
+            onChanged: (val) {
+              setState(() {
+                _isUploadEnabled = val;
+              });
+            },
             title: const Text("Upload data to cloud"),
           ),
           const Divider(),
@@ -39,3 +57,4 @@ class SettingsTabView extends StatelessWidget {
     );
   }
 }
+

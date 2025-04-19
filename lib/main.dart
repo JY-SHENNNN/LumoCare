@@ -86,12 +86,20 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 219, 215, 205),
       appBar: AppBar(
-        title: const Text("LumoCare"),
+        title: const Text("LumoCare",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+            color: Color.fromARGB(255, 142, 171, 162),
+          ),
+        ),
+          
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 121, 119, 113),
-        elevation: 0,
+        elevation: 3,
       ),
       drawer: Drawer(
+        backgroundColor: Color.fromARGB(255, 207, 203, 192),
         child: Column(
           children: [
             const DrawerHeader(
@@ -122,83 +130,65 @@ class _HomePageState extends State<HomePage> {
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: Color.fromARGB(255, 140, 169, 160),
                   fontStyle: FontStyle.italic,
                   letterSpacing: 1.2,
                 ),
               ),
               const SizedBox(height: 40),
-              Container(
-                width: 300,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(157, 134, 138, 139), // background color
-                  borderRadius: BorderRadius.circular(8), // broard
-                ),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Icon(Icons.wb_sunny, size: 30, color: Colors.white),
-                    SizedBox(width: 10),
-                    Flexible(
-                      child: Text(
-                        "Real-time monitoring\nof environmental light",
-                        style: TextStyle(fontSize: 16, color: Colors.white),
-                      ),
+            
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(Icons.wb_sunny, size: 30, color: Colors.white),
+                  SizedBox(width: 10),
+                  Flexible(
+                    child: Text(
+                      "Real-time monitoring\n of environmental light",
+                      style: TextStyle(fontSize: 16, color: Colors.white),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
 
               const SizedBox(height: 20),
-              Container(
-                width: 300,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(157, 134, 138, 139), // background color
-                  borderRadius: BorderRadius.circular(8), // broard
-                ),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Icon(Icons.remove_red_eye, size: 30, color: Colors.white),
-                    SizedBox(width: 10),
-                    Flexible(
-                      child: Text(
-                        "Low light reminders\nStrong light suggestions",
-                        style: TextStyle(fontSize: 16, color: Colors.white),
-                      ),
+            
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(Icons.remove_red_eye, size: 30, color: Colors.white),
+                  SizedBox(width: 10),
+                  Flexible(
+                    child: Text(
+                      "Low light reminders\n  Strong light suggestions",
+                      style: TextStyle(fontSize: 16, color: Colors.white),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               const SizedBox(height: 20),
-              Container(
-                width: 300,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(157, 134, 138, 139), // background color
-                  borderRadius: BorderRadius.circular(8), // broard
-                ),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Icon(Icons.cloud, size: 30, color: Colors.white),
-                    SizedBox(width: 10),
-                    Flexible(
-                      child: Text(
-                        "Record your eye-use\nenvironmental data",
-                        style: TextStyle(fontSize: 16, color: Colors.white),
-                      ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(Icons.cloud, size: 30, color: Colors.white),
+                  SizedBox(width: 10),
+                  Flexible(
+                    child: Text(
+                      "Record your eye-use\nenvironmental data",
+                      style: TextStyle(fontSize: 16, color: Colors.white),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               const SizedBox(height: 30),
               const Text(
                 "Welcome to LumoCare",
                 textAlign: TextAlign.center,
                 style: TextStyle(
+                  backgroundColor: Color.fromARGB(255, 140, 169, 160),
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
