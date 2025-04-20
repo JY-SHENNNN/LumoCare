@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:testapp/pages/firstpage.dart';
+import 'package:testapp/pages/history_tab.dart';
 import 'package:testapp/pages/settings_tab.dart';
 import 'package:testapp/pages/signup_page.dart';
 import 'firebase_options.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         '/dashboard': (context) => const Firstpage(),
         '/setting': (context) => const SettingsTabView(),
         '/signup': (context) => const SignUpPage(),
+        '/history': (context) => const HistoryTabView(),
       },
     );
   }

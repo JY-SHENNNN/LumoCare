@@ -144,7 +144,7 @@ class _FirstpageState extends State<Firstpage> {
                 setState(() {
                   _currentIndex = 1;
                 });
-                Navigator.pushNamed(context, 'history');
+                Navigator.pushNamed(context, '/history');
               },
             ),
             ListTile(
