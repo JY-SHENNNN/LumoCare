@@ -48,73 +48,98 @@ class HistoryTabView extends StatelessWidget {
             }
 
             final luxPerHour = snapshot.data!;
+            double avgLux = 0;
+            String rating = "⭐️☆☆☆☆";
+            String comment = "No data available for today.";
 
-            return Padding(
-              padding: const EdgeInsets.all(16),
-              child: AspectRatio(
-                aspectRatio: 1.0,
-                child: LineChart(
-                  LineChartData(
-                    minX: 0,
-                    maxX: 23,
-                    minY: 0,
-                    maxY: 1000,
-                    titlesData: FlTitlesData(
-                      leftTitles: AxisTitles(
-                        sideTitles: SideTitles(
-                          showTitles: true,
-                          interval: 200,
-                          reservedSize: 40,
-                          getTitlesWidget: (value, meta) => Text(
-                            '${value.toInt()}',
-                            style: const TextStyle(fontSize: 12),
+            if (luxPerHour.isNotEmpty) {
+              avgLux = luxPerHour.map((e) => e.y).reduce((a, b) => a + b) / luxPerHour.length;
+
+              if (avgLux < 100) {
+                rating = "⭐️☆☆☆☆";
+                comment = "Light is too weak today. Consider increasing light exposure.";
+              } else if (avgLux < 300) {
+                rating = "⭐️⭐️☆☆☆";
+                comment = "Some areas are too dim, suitable for relaxation but not for work.";
+              } else if (avgLux < 500) {
+                rating = "⭐️⭐️⭐️⭐️☆";
+                comment = "Moderate lighting, good for study/work. Remember to take breaks.";
+              } else {
+                rating = "⭐️⭐️⭐️⭐️⭐️";
+                comment = "Excellent lighting! Perfect for tasks, but don't forget to rest.";
+              }
+            }
+  
+            return Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: AspectRatio(
+                    aspectRatio: 1.0,
+                    child: LineChart(
+                      LineChartData(
+                        minX: 0,
+                        maxX: 23,
+                        minY: 0,
+                        maxY: 1000,
+                        titlesData: FlTitlesData(
+                          leftTitles: AxisTitles(
+                            sideTitles: SideTitles(
+                              showTitles: true,
+                              interval: 200,
+                              reservedSize: 40,
+                              getTitlesWidget: (value, meta) => Text(
+                                '${value.toInt()}',
+                                style: const TextStyle(fontSize: 12),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                      bottomTitles: AxisTitles(
-                        sideTitles: SideTitles(
-                          showTitles: true,
-                          interval: 3,
-                          getTitlesWidget: (value, meta) => Padding(
-                            padding: const EdgeInsets.only(top: 4),
-                            child: Text('${value.toInt()}h',
-                                style: const TextStyle(fontSize: 12)),
+                          bottomTitles: AxisTitles(
+                            sideTitles: SideTitles(
+                              showTitles: true,
+                              interval: 3,
+                              getTitlesWidget: (value, meta) => Padding(
+                                padding: const EdgeInsets.only(top: 4),
+                                child: Text('${value.toInt()}h',
+                                    style: const TextStyle(fontSize: 12)),
+                              ),
+                            ),
                           ),
+                          topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                          rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
                         ),
-                      ),
-                      topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
-                      rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
-                    ),
-                    gridData: FlGridData(
-                      show: true,
-                      drawHorizontalLine: true,
-                      horizontalInterval: 200,
-                      getDrawingHorizontalLine: (value) => FlLine(
-                        color: Colors.grey[300]!,
-                        strokeWidth: 1,
-                        dashArray: [5, 5],
-                      ),
-                    ),
-                    borderData: FlBorderData(
-                      show: true,
-                      border: Border.all(color: Colors.grey.shade400),
-                    ),
-                    lineBarsData: [
-                      LineChartBarData(
-                        isCurved: true,
-                        color: Colors.orange,
-                        spots: luxPerHour,
-                        barWidth: 3,
-                        dotData: FlDotData(show: false),
-                        belowBarData: BarAreaData(
+                        gridData: FlGridData(
                           show: true,
-                          color: Colors.orange.withOpacity(0.3),
+                          drawHorizontalLine: true,
+                          horizontalInterval: 200,
+                          getDrawingHorizontalLine: (value) => FlLine(
+                            color: Colors.grey[300]!,
+                            strokeWidth: 1,
+                            dashArray: [5, 5],
+                          ),
                         ),
-                      )
-                    ],
+                        borderData: FlBorderData(
+                          show: true,
+                          border: Border.all(color: Colors.grey.shade400),
+                        ),
+                        lineBarsData: [
+                          LineChartBarData(
+                            isCurved: true,
+                            color: Colors.orange,
+                            spots: luxPerHour,
+                            barWidth: 3,
+                            dotData: FlDotData(show: false),
+                            belowBarData: BarAreaData(
+                              show: true,
+                              color: Colors.orange.withOpacity(0.3),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-              ),
+              ],
             );
           },
         ),
