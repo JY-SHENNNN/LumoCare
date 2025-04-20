@@ -91,8 +91,9 @@ class _HomePageState extends State<HomePage> {
         title: const Text("LumoCare",
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 20,
-            color: Color.fromARGB(255, 142, 171, 162),
+            fontSize: 40,
+            //Color.fromARGB(255, 142, 171, 162),
+            color: Color.fromARGB(255, 255, 255, 255),
           ),
         ),
           
@@ -127,17 +128,18 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Text(
+                "Welcome to LumoCare\n"
                 "Smart light monitoring,\nbe your vision hero",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 140, 169, 160),
+                  color: Color.fromARGB(255, 169, 162, 140),
                   fontStyle: FontStyle.italic,
                   letterSpacing: 1.2,
                 ),
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 20),
             
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -154,7 +156,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
             
               const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -170,7 +172,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -186,25 +188,32 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               const SizedBox(height: 30),
-              const Text(
-                "Welcome to LumoCare",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  backgroundColor: Color.fromARGB(255, 140, 169, 160),
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  fontStyle: FontStyle.italic,
-                  letterSpacing: 1.2,
-                ),
-              ),
+              // Container(
+              //   decoration: BoxDecoration(
+              //     color: Color.fromARGB(138, 140, 169, 160),
+              //     borderRadius: BorderRadius.circular(12),
+              //   ),
+              //   child: const Text(
+              //   "Welcome to LumoCare\n"
+              //   "Smart light monitoring,\nbe your vision hero",
+              //   textAlign: TextAlign.center,
+              //   style: TextStyle(
+              //    // backgroundColor: Color.fromARGB(96, 140, 169, 160),
+              //     fontSize: 30,
+              //     fontWeight: FontWeight.bold,
+              //     color: Colors.white,
+              //     fontStyle: FontStyle.italic,
+              //     letterSpacing: 1.2,
+              //   ),
+              // ),
+              // ),              
               const SizedBox(height: 30),
 
               // Email
               TextField(
                 controller: _emailController,
                 decoration: InputDecoration(
-                  hintText: 'Username (Email)',
+                  hintText: 'Email',
                   fillColor: Colors.white,
                   filled: true,
                   border: OutlineInputBorder(

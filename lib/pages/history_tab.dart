@@ -9,14 +9,14 @@ class HistoryTabView extends StatelessWidget {
   Future<List<FlSpot>> fetchLuxData() async {
     final currentUser = FirebaseAuth.instance.currentUser;
     final uid = currentUser?.uid;
-    final snapshot = await FirebaseFirestore.instance
+    final snapshot = await FirebaseFirestore.instance //get stored value from collection light_data and username
         .collection('light_data')
         .doc(uid)
         .collection('hourly_data')
         .get();
 
     final List<FlSpot> points = [];
-
+    // generate points for the graph
     for (var doc in snapshot.docs) {
       final hour = double.tryParse(doc.id) ?? -1;
       final lux = (doc['lux'] as num).toDouble();
