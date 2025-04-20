@@ -18,10 +18,10 @@ class _FirstpageState extends State<Firstpage> {
   int _currentIndex = 0;
 
   List<Widget> get _pages => [
-  HomeTabView(lux: _lux, advice: getAdvice(_lux)),
-  const HistoryTabView(),
-  const SettingsTabView(),
-];
+    HomeTabView(lux: _lux, advice: getAdvice(_lux)),
+    const HistoryTabView(),
+    const SettingsTabView(),
+  ];
 
 
   Light? _light;
@@ -31,8 +31,35 @@ class _FirstpageState extends State<Firstpage> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _showWelcomeDialog();
+    });
     initLightSensor();
   }
+
+// show alert once the login in is successful
+  void _showWelcomeDialog() {
+    final username = FirebaseAuth.instance.currentUser?.displayName ?? 'User';
+
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text('Hi, $username 👋'),
+        content: Text('Welcome to LumoCare Dashboard, \n we are your visio hero.\n'
+         'You can check if your ambient light is comfortable.',
+        softWrap: true,
+        textAlign: TextAlign.center,
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('OK'),
+          )
+        ],
+      ),
+    );
+  }
+
 
   void initLightSensor() {
     _light = Light();
@@ -44,7 +71,9 @@ class _FirstpageState extends State<Firstpage> {
         });
 
         final currentHour = DateFormat('H').format(DateTime.now());
+        final username = FirebaseAuth.instance.currentUser?.displayName ?? 'User';
         FirebaseFirestore.instance.collection('light_data').doc(currentHour).set({
+          'username': username,
           'lux': luxValue,
           'timestamp': FieldValue.serverTimestamp(),
         });
