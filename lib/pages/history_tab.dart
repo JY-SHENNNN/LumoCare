@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -6,8 +7,12 @@ class HistoryTabView extends StatelessWidget {
   const HistoryTabView({super.key});
 
   Future<List<FlSpot>> fetchLuxData() async {
+    final currentUser = FirebaseAuth.instance.currentUser;
+    final uid = currentUser?.uid;
     final snapshot = await FirebaseFirestore.instance
         .collection('light_data')
+        .doc(uid)
+        .collection('hourly_data')
         .get();
 
     final List<FlSpot> points = [];
@@ -26,9 +31,11 @@ class HistoryTabView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currentUser = FirebaseAuth.instance.currentUser;
+    final username = currentUser?.displayName ?? "Users";
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Today's Light History"),
+        title: Text("$username's Light History "),
         backgroundColor: Colors.grey[850],
       ),
       body: FutureBuilder<List<FlSpot>>(

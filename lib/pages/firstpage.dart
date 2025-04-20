@@ -70,13 +70,24 @@ class _FirstpageState extends State<Firstpage> {
           _lux = luxValue;
         });
 
+        final user = FirebaseAuth.instance.currentUser;
+        if (user == null) return; // added because uid' can't be unconditionally accessed because the receiver can be 'null'.
+        final uid = user.uid;
+        final username = user.displayName ?? 'Users';
+
+
         final currentHour = DateFormat('H').format(DateTime.now());
-        final username = FirebaseAuth.instance.currentUser?.displayName ?? 'User';
-        FirebaseFirestore.instance.collection('light_data').doc(currentHour).set({
-          'username': username,
-          'lux': luxValue,
-          'timestamp': FieldValue.serverTimestamp(),
-        });
+        // store the value based on the username- data/hour - light data
+        FirebaseFirestore.instance
+          .collection('light_data')
+          .doc(uid)
+          .collection('hourly_data')
+          .doc(currentHour)
+          .set({
+            'username': username,
+            'lux': luxValue,
+            'timestamp': FieldValue.serverTimestamp(),
+          });
       });
     } catch (e) {
       print("Light sensor error: $e");
