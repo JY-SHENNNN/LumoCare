@@ -162,8 +162,24 @@ class _FirstpageState extends State<Firstpage> {
               leading: const Icon(Icons.logout),
               title: const Text("L O G O U T"),
               onTap: () async {
-                await FirebaseAuth.instance.signOut();
-                Navigator.pushReplacementNamed(context, '/');
+                final user = FirebaseAuth.instance.currentUser;
+                final username = user?.displayName ?? 'User';
+                showDialog(
+                  context: context,
+                  barrierDismissible: false, // disable tap outer region
+                  builder: (context){
+                    Future.delayed(const Duration(seconds: 2), () async {
+                      Navigator.pop(context); 
+                      await FirebaseAuth.instance.signOut(); // sign out
+                      Navigator.pushReplacementNamed(context, '/'); // back to welcome page
+                    });
+
+                    return AlertDialog(
+                      title: Text("Goodbye, $username 👋"),
+                      content: const Text("Hope to see you again soon!"),
+                    );
+                  },
+                );
               },
             ),
 
