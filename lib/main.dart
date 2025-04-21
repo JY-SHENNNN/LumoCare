@@ -45,6 +45,12 @@ class _HomePageState extends State<HomePage> {
   final TextEditingController _passwordController = TextEditingController();
   String? errorMessage;
 
+  String cleanErrorMessage(String rawMessage) {
+  // clean [firebase_auth/invalid-email] part to aviod confusion
+    return rawMessage.replaceFirst(RegExp(r'\[.*?\] '), '');
+  }
+
+
   Future<void> _signIn() async {
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -78,7 +84,7 @@ class _HomePageState extends State<HomePage> {
     } catch (e) {
       // add error message alert
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text("Login failed: ${e.toString()}"),
+        content: Text("Login failed: ${cleanErrorMessage(e.toString())}"),
       ));
     }
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SettingsTabView extends StatefulWidget {
   const SettingsTabView({super.key});
@@ -46,7 +47,49 @@ bool _isUploadEnabled = true;
             const Divider(),
             ListTile(
               title: const Text("Change Password"),
-              onTap: () {},
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    final TextEditingController _passwordController = TextEditingController();
+
+                    return AlertDialog(
+                      title: const Text("Change Password"),
+                      content: TextField(
+                        controller: _passwordController,
+                        obscureText: true,
+                        decoration: const InputDecoration(
+                          labelText: 'New Password',
+                        ),
+                      ),
+                      actions: [
+                        TextButton(
+                          child: const Text("Cancel"),
+                          onPressed: () => Navigator.pop(context),
+                        ),
+                        ElevatedButton(
+                          child: const Text("Update"),
+                          onPressed: () async {
+                            try {
+                              await FirebaseAuth.instance.currentUser!
+                                  .updatePassword(_passwordController.text.trim());
+                              Navigator.pushNamed(context,'/');
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(content: Text("Password updated successfully!")),
+                              );
+                            } catch (e) {
+                              Navigator.pop(context);
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text("Error: ${e.toString()}")),
+                              );
+                            }
+                          },
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
             ),
             ListTile(
               title: const Text("Logout"),
