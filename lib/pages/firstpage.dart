@@ -115,7 +115,15 @@ class _FirstpageState extends State<Firstpage> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 219, 215, 205),
       appBar: AppBar(
-        title: const Text("LumoCare Dashboard"),
+        title: const Text(
+          "LumoCare Dashboard",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 30,
+            //Color.fromARGB(255, 142, 171, 162),
+            color: Color.fromARGB(255, 255, 255, 255),
+          ),
+        ),
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 121, 119, 113),
         elevation: 0,

@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
         title: const Text("LumoCare",
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 40,
+            fontSize: 50,
             //Color.fromARGB(255, 142, 171, 162),
             color: Color.fromARGB(255, 255, 255, 255),
           ),
@@ -150,7 +150,7 @@ class _HomePageState extends State<HomePage> {
                   Flexible(
                     child: Text(
                       "Real-time monitoring\n of environmental light",
-                      style: TextStyle(fontSize: 16, color: Colors.white),
+                      style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
                 ],
@@ -167,7 +167,7 @@ class _HomePageState extends State<HomePage> {
                   Flexible(
                     child: Text(
                       "Low light reminders\n  Strong light suggestions",
-                      style: TextStyle(fontSize: 16, color: Colors.white),
+                      style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
                 ],
@@ -182,7 +182,7 @@ class _HomePageState extends State<HomePage> {
                   Flexible(
                     child: Text(
                       "Record your eye-use\nenvironmental data",
-                      style: TextStyle(fontSize: 16, color: Colors.white),
+                      style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                   ),
                 ],

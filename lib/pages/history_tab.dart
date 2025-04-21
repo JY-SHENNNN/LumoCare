@@ -35,7 +35,14 @@ class HistoryTabView extends StatelessWidget {
     final username = currentUser?.displayName ?? "Users";
     return Scaffold(
       appBar: AppBar(
-        title: Text("$username's Light History "),
+        title: Text("$username's Light History ",
+        style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+            //Color.fromARGB(255, 142, 171, 162),
+            color: Color.fromARGB(255, 255, 255, 255),
+          ),
+        ),
         backgroundColor: Color.fromARGB(255, 121, 119, 113),
       ),
       body: Container(
