@@ -16,7 +16,7 @@ class Firstpage extends StatefulWidget {
 
 class _FirstpageState extends State<Firstpage> {
   int _currentIndex = 0;
-
+  // pages to push once the bottom navigator tapped
   List<Widget> get _pages => [
     HomeTabView(lux: _lux, advice: getAdvice(_lux)),
     const HistoryTabView(),
@@ -26,7 +26,7 @@ class _FirstpageState extends State<Firstpage> {
 
   Light? _light;
   late Stream<int> _lightStream;
-  int _lux = 0;
+  int _lux = 0; //default light value
 
   @override
   void initState() {
@@ -45,7 +45,7 @@ class _FirstpageState extends State<Firstpage> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text('Hi, $username 👋'),
-        content: Text('Welcome to LumoCare Dashboard, \n we are your visio hero.\n'
+        content: Text('Welcome to LumoCare Dashboard, \n we are your vision hero.\n'
          'You can check if your ambient light is comfortable.',
         softWrap: true,
         textAlign: TextAlign.center,

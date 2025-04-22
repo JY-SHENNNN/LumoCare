@@ -30,7 +30,14 @@ dependencies:
   firebase_ui_auth: ^1.16.1
   fl_chart: ^0.64.0 
   intl: ^0.19.0
+  flutter_launcher_icons: ^0.13.1
 
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/LumoCare_logo.png" 
+  min_sdk_android: 21 
 
 dev_dependencies:
   flutter_test:

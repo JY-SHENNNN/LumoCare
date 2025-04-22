@@ -138,7 +138,7 @@ class _HomePageState extends State<HomePage> {
                 "Smart light monitoring,\nbe your vision hero",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 33,
                   fontWeight: FontWeight.bold,
                   color: Color.fromARGB(255, 169, 162, 140),
                   fontStyle: FontStyle.italic,
@@ -156,7 +156,7 @@ class _HomePageState extends State<HomePage> {
                   Flexible(
                     child: Text(
                       "Real-time monitoring\n of environmental light",
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      style: TextStyle(fontSize: 15, color: Colors.white),
                     ),
                   ),
                 ],
@@ -173,7 +173,7 @@ class _HomePageState extends State<HomePage> {
                   Flexible(
                     child: Text(
                       "Low light reminders\n  Strong light suggestions",
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      style: TextStyle(fontSize: 15, color: Colors.white),
                     ),
                   ),
                 ],
@@ -188,7 +188,7 @@ class _HomePageState extends State<HomePage> {
                   Flexible(
                     child: Text(
                       "Record your eye-use\nenvironmental data",
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      style: TextStyle(fontSize: 15, color: Colors.white),
                     ),
                   ),
                 ],

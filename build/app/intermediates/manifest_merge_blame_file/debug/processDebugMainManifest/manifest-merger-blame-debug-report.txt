@@ -61,7 +61,7 @@
 43        android:debuggable="true"
 44        android:extractNativeLibs="false"
 45        android:icon="@mipmap/ic_launcher"
-46        android:label="mealselection" >
+46        android:label="LomoCare" >
 47        <activity
 48            android:name="com.example.mealselection.MainActivity"
 49            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
