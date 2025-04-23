@@ -116,7 +116,7 @@ class _FirstpageState extends State<Firstpage> {
       backgroundColor: const Color.fromARGB(255, 219, 215, 205),
       appBar: AppBar(
         title: const Text(
-          "LumoCare Dashboard",
+          "Dashboard",
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 30,
