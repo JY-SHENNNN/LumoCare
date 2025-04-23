@@ -97,7 +97,7 @@ class _HomePageState extends State<HomePage> {
         title: const Text("LumoCare",
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 50,
+            fontSize: 30,
             //Color.fromARGB(255, 142, 171, 162),
             color: Color.fromARGB(255, 255, 255, 255),
           ),
@@ -138,7 +138,7 @@ class _HomePageState extends State<HomePage> {
                 "Smart light monitoring,\nbe your vision hero",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 33,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
                   color: Color.fromARGB(255, 169, 162, 140),
                   fontStyle: FontStyle.italic,
