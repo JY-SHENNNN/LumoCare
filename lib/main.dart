@@ -134,7 +134,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Text(
-                "Smart light monitoring,\nbe your vision hero",
+                "Monitor light, \n be your vision hero",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 30,

@@ -64,21 +64,21 @@ class HomeTabView extends StatelessWidget {
 
         const SizedBox(height: 16),
 
-        //history card
-        Card(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-          child: ListTile(
-            leading: const Icon(Icons.bar_chart, color: Colors.green, size: 32),
-            title: const Text("View history"),
-            subtitle: const Text("Check light trends and eye care tips."),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const HistoryTabView()),
-              );
-            },
-          ),
-        ),
+        // //history card
+        // Card(
+        //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        //   child: ListTile(
+        //     leading: const Icon(Icons.bar_chart, color: Colors.green, size: 32),
+        //     title: const Text("View history"),
+        //     subtitle: const Text("Check light trends and eye care tips."),
+        //     onTap: () {
+        //       Navigator.push(
+        //         context,
+        //         MaterialPageRoute(builder: (context) => const HistoryTabView()),
+        //       );
+        //     },
+        //   ),
+        // ),
       ],
     );
   }
