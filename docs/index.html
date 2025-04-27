@@ -7,7 +7,7 @@
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background-color: #a4842b;
+      background-color: #fffefe;
       color: #333;
     }
 
@@ -25,6 +25,35 @@
 
     header p {
       font-size: 22px;
+      margin-top: 10px;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .header-content img {
+      width: 100px;
+      height: 100px;
+      border-radius: 20px;
+      background-color: white;
+      padding: 10px;
+    }
+
+    .header-text {
+      text-align: left;
+    }
+
+    .header-text h1 {
+      font-size: 48px;
+      margin: 0;
+    }
+
+    .header-text p {
+      font-size: 20px;
       margin-top: 10px;
     }
 
@@ -122,72 +151,99 @@
       line-height: 1.4;
     }
 
-.secondary-section {
-  background-color: #fffefe;
-  padding: 80px 20px;
-}
+    .secondary-section {
+      background-color: #fffefe;
+      padding: 80px 20px;
+    }
 
-.item-group {
-  display: flex;
-  justify-content: center;
-  gap: 50px; 
-  flex-wrap: wrap;
-}
+    .item-group {
+      display: flex;
+      justify-content: center;
+      gap: 50px; 
+      flex-wrap: wrap;
+    }
 
-.item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 220px; 
-}
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 220px; 
+    }
 
-.feature-image {
-  width: 180px;
-  border-radius: 30px;
-  background-color: white;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
-}
+    .feature-image {
+      width: 180px;
+      border-radius: 30px;
+      background-color: white;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
 
-.feature-image:hover {
-  transform: scale(1.05);
-}
+    .feature-image:hover {
+      transform: scale(1.05);
+    }
 
-.feature-card {
-  background-color: #ada899;
-  color: white;
-  padding: 20px;
-  margin-top: 20px; /* Space between image and card */
-  border-radius: 30px;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-}
+    .feature-card {
+      background-color: #ada899;
+      color: white;
+      padding: 20px;
+      margin-top: 20px; /* Space between image and card */
+      border-radius: 30px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
 
-.feature-card:hover {
-  transform: translateY(-5px);
-}
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
 
-.feature-card h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
+    .feature-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
 
-.feature-card p {
-  font-size: 15px;
-  line-height: 1.4;
-}
+    .feature-card p {
+      font-size: 15px;
+      line-height: 1.4;
+    }
 
-footer {
-    background-color: #ada899;
-    color: white;
-    text-align: center;
-    padding: 30px 10px;
-    font-size: 16px;
-    margin-top: 0;
-}
+    footer {
+        background-color: #ada899;
+        color: white;
+        text-align: center;
+        padding: 30px 10px;
+        font-size: 16px;
+        margin-top: 0;
+    }
 
+    .third-section {
+      background-color: #ada899;
+      padding: 30PX;
+      text-align: center;
+      margin-top: 0%;
+    }
+
+    .download-group h3 {
+      font-size: 32px;
+      color: #fffefe;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .download-group p {
+      font-size: 25px;
+      color: #fffefe;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    
+    .forth-section{
+      background-color: #fffefe;
+      margin-top: 0;
+      padding: 20px;
+    }
 
 
 
@@ -207,9 +263,15 @@ footer {
 
 <!-- Header -->
 <header>
-  <h1>LumoCare</h1>
-  <p>Your Vision, Our Mission</p>
+  <div class="header-content">
+    <img src="https://raw.githubusercontent.com/JY-SHENNNN/LumoCare/refs/heads/Page/assets/icon/LumoCare_logo.png" height="100" alt="Logo">
+    <div class="header-text">
+      <h1>LumoCare</h1>
+      <p>Your Vision, Our Mission</p>
+    </div>
+  </div>
 </header>
+
 
 <!-- Main Section -->
 <section class="main">
@@ -229,16 +291,16 @@ footer {
   </div>
 
   <div class="phone-images">
-    <img src="<img src="/LumoCare/assets/Img/phone1.png" alt="App Screenshot 1">
-    <img src="assets/Img/phone2.png" alt="App Screenshot 2">
-    <img src="assets/Img/phone3.png" alt="App Screenshot 3">
+    <img src="https://raw.githubusercontent.com/JY-SHENNNN/LumoCare/refs/heads/Page/assets/Img/phone1.png" alt="App Screenshot 1">
+    <img src="https://raw.githubusercontent.com/JY-SHENNNN/LumoCare/refs/heads/Page/assets/Img/phone2.png" alt="App Screenshot 2">
+    <img src="https://raw.githubusercontent.com/JY-SHENNNN/LumoCare/refs/heads/Page/assets/Img/phone3.png" alt="App Screenshot 3">
   </div>
 </section>
 
 <section class="secondary-section">
     <div class="item-group">
       <div class="item">
-        <img src="../assets/Img/phone4.png" alt="Access Requiring" class="feature-image">
+        <img src="https://raw.githubusercontent.com/JY-SHENNNN/LumoCare/refs/heads/Page/assets/Img/phone4.png" alt="Access Requiring" class="feature-image">
         <div class="feature-card">
           <h3>Access Requiring</h3>
           <p>Permission is needed to access your device’s light sensor securely.</p>
@@ -246,7 +308,7 @@ footer {
       </div>
   
       <div class="item">
-        <img src="../assets/Img/phone5.png" alt="Welcome" class="feature-image">
+        <img src="https://raw.githubusercontent.com/JY-SHENNNN/LumoCare/refs/heads/Page/assets/Img/phone5.png" alt="Welcome" class="feature-image">
         <div class="feature-card">
           <h3>Welcome</h3>
           <p>After login, users are greeted with their name, providing a friendly experience.</p>
@@ -254,7 +316,7 @@ footer {
       </div>
   
       <div class="item">
-        <img src="../assets/Img/phone6.png" alt="Goodbye" class="feature-image">
+        <img src="https://raw.githubusercontent.com/JY-SHENNNN/LumoCare/refs/heads/Page/assets/Img/phone6.png" alt="Goodbye" class="feature-image">
         <div class="feature-card">
           <h3>Goodbye</h3>
           <p>When logging out, users are personally thanked by name to create closure.</p>
@@ -262,11 +324,69 @@ footer {
       </div>
     </div>
   </section>
+
+  <section>
+    <div class="third-section">
+      <div class="download-group p">
+        <h3>Experience real-time light monitoring and smart advice directly on your mobile device!</h3>
+        <a href="https://github.com/JY-SHENNNN/LumoCare/releases" target="_blank" 
+           style="background-color: #b3b2ae; color: white; padding: 12px 24px; border-radius: 30px; text-decoration: none; font-size: 18px; font-weight: bold; transition: background-color 0.3s;">
+          📥 Download App
+        </a>
+
+        <a href="https://github.com/JY-SHENNNN/LumoCare" target="_blank" 
+           style="background-color: #b3b2ae; color: white; padding: 12px 24px; border-radius: 30px; text-decoration: none; font-size: 18px; font-weight: bold; transition: background-color 0.3s;">
+          📚 Visit GitHub Repo
+        </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="forth-section">
+      <br> 
+    </div>
+  </section>
   
-  <!-- Footer -->
-<footer>
-    © 2025 LumoCare | Designed with ❤️ for Vision Care
-  </footer>
+  
+<!-- Footer Section -->
+<footer style="background-color: #1c1c1c; color: white; padding: 60px 20px 30px; font-family: Arial, sans-serif;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 40px;">
+
+    <!-- App Info -->
+    <div style="flex: 1; min-width: 220px;">
+      <h3 style="margin-bottom: 10px;">🌟 LumoCare</h3>
+      <p>Smart light monitoring, your best vision protector.</p>
+    </div>
+
+    <!-- Contact Info -->
+    <div style="flex: 1; min-width: 220px;">
+      <h4 style="margin-bottom: 10px;">Contact Us</h4>
+      <p>📞 +44 7579958692 </p>
+      <p>✉️ zczqjs2@ucl.ac.uk</p>
+      <p>💻 JY-SHENNNN </p>
+      <p>📍 1 Pool St, London E20 2AF</p>
+    </div>
+
+
+    <!-- Useful Links -->
+    <div style="flex: 1; min-width: 220px;">
+      <h4 style="margin-bottom: 10px;">Useful Links</h4>
+      <p>About</p>
+      <p>Features</p>
+      <p>Pricing</p>
+      <p>Contact</p>
+    </div>
+
+  </div>
+
+  <div style="text-align: center; margin-top: 40px; font-size: 14px; color: #aaa;">
+    Copyright © 2025 LumoCare | All Rights Reserved
+    <br>
+    <a href="#" style="color: #aaa; margin-right: 10px;">Help Center</a>
+    <a href="#" style="color: #aaa;">Refund Policy</a>
+  </div>
+</footer>
+
   
   
   
