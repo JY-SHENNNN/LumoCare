@@ -6,6 +6,16 @@ A Flutter application designed to **monitor ambient light** and **provide real-t
 
 ---
 
+## landing page: https://jy-shennnn.github.io/LumoCare/
+
+The page is generated through github pages, the soucre code stored in Page branch, doc/index.html
+
+---
+
+## storyboard
+
+
+
 ## ✨ Features
 
 - 🔆 Real-time ambient light monitoring via device sensor
