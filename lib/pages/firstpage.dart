@@ -101,12 +101,11 @@ class _FirstpageState extends State<Firstpage> {
       return "🕯️ The light is good for relax";
     } else if (lux >= 300 && lux < 500){
       return "💡 The light is good for study or work, pay attention to rest";
-    } else {
+    } else if (lux >= 500 && lux < 1000) {
       return "🔦 The light is good for small delicate task, pay attention to rest";
+    } else {
+      return "☀️ Strong light, take care of your eyes";
     } 
-    // else {
-    //   return "☀️ Strong light, take care of your eyes";
-    // } 
   }
 
 
