@@ -12,10 +12,6 @@ The page is generated through github pages, the soucre code stored in Page branc
 
 ---
 
-## storyboard
-
-
-
 ## ✨ Features
 
 - 🔆 Real-time ambient light monitoring via device sensor
